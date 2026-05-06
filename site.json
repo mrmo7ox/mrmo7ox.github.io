@@ -1,0 +1,80 @@
+{
+  "directories": {
+    "content": "content",
+    "templates": "templates",
+    "public": "public",
+    "assets": "assets"
+  },
+  "assets": {
+    "profile_picture": "./assets/profile.jpeg",
+    "default_category_bg": "#000000"
+  },
+  "site_info": {
+    "title": "m.elouardi | root system",
+    "author_name": "Mohamed Elouardi",
+    "status_badge": "Status: 1337 Student",
+    "bio_description": "Self-taught programmer and cybersecurity researcher focusing on Reverse Engineering and System Exploitation.",
+    "footer_text": "No System Is Safe. // © 2026 Mohamed Elouardi"
+  },
+  "navigation": [
+    { "label": "> root_system", "url": "index.html" },
+    { "label": "/whoami", "url": "whoami.html" }
+  ],
+  "whoami": {
+    "full_bio": "I am a self-taught programmer with practical experience in building web applications and system optimization tools. I focus on low-level security, including Python bytecode analysis and binary reverse engineering.",
+    "ctf_placements": [
+      { "event": "CTF MUNIDAPOLIS 2026", "rank": "Brave Warriors", "placement": "04", "image": "./assets/mundiapolis.png" },
+      { "event": "NetCom Days 2026", "rank": "P1zz4", "placement": "02", "image": "./assets/netcom.png" },
+      { "event": "Cyber Odyssey 2025 - Akasec", "rank": "CP_Z3R0", "placement": "09", "image": "./assets/akasec-odessy.jpg" },
+      { "event": "Securinets CTF Final 2025", "rank": "TH3 4rchi73cts", "placement": "09", "image": "./assets/securenis.jpeg" },
+      { "event": "NetCom Days 2025", "rank": "CP_Z3R0", "placement": "02", "image": "./assets/netcom.png" }
+    ],
+    "skills": ["C/C++ Systems Programming", "Reverse Engineering", "Network Protocol Implementation", "Docker Infrastructure", "Ethical Hacking", "Assembly"],
+    "certifications": ["EF SET English Certificate"],
+    "projects": [
+      {
+        "category": "Security & Reverse Engineering",
+        "items": [
+          { "name": "j1tsur1", "lang": "C++", "desc": "My first exploit development project.", "url": "https://github.com/mrmo7ox/j1tsur1" },
+          { "name": "dofusmage_cracked", "lang": "C++", "desc": "Reverse engineered and bypassed authentication for a compiled application.", "url": "https://github.com/mrmo7ox/dofusmage_cracked" },
+          { "name": "asm", "lang": "Assembly", "desc": "Low-level Assembly architecture studies and operations.", "url": "https://github.com/mrmo7ox/asm" }
+        ]
+      },
+      {
+        "category": "1337 (42 Network) Core Curriculum",
+        "items": [
+          { "name": "ft_irc", "lang": "C++", "desc": "Built a fully functional IRC server in C++98 following strict RFC protocols.", "url": "https://github.com/mrmo7ox/ft_irc" },
+          { "name": "inception", "lang": "Shell/Docker", "desc": "Deep dive into system administration, deploying a secure multi-container infrastructure.", "url": "https://github.com/mrmo7ox/inception" },
+          { "name": "minishell", "lang": "C", "desc": "Built a custom UNIX shell from scratch handling signals, pipes, and parsing.", "url": "https://github.com/mrmo7ox/minishell" },
+          { "name": "cub3d", "lang": "C", "desc": "Developed a 3D game engine using raycasting math and the minilibx graphics library.", "url": "https://github.com/mrmo7ox/cub3d" },
+          { "name": "born2beroot", "lang": "Shell", "desc": "Set up a secure virtual server from scratch with strict rules and LVM.", "url": "https://github.com/mrmo7ox/born2beroot" },
+          { "name": "minitalk", "lang": "C", "desc": "Client-server communication program utilizing bitwise operations and UNIX signals.", "url": "https://github.com/mrmo7ox/minitalk" },
+          { "name": "cpp-modules", "lang": "C++", "desc": "Advanced object-oriented programming concepts and system design.", "url": "https://github.com/mrmo7ox/cpp-modules" },
+          { "name": "netpractice", "lang": "Networking", "desc": "Deep dive into TCP/IP addressing, subnetting, and routing tables.", "url": "https://github.com/mrmo7ox/netpractice" },
+          { "name": "ft_transcendence", "lang": "Web Stack", "desc": "The final 1337 project: a full-stack real-time quiz games for 42 projects.", "url": "https://github.com/mrmo7ox/ft_transcendence" },
+          { "name": "philosophers-42", "lang": "C", "desc": "Solved the classic dining philosophers problem using threads and mutexes.", "url": "https://github.com/mrmo7ox/philosophers-42" },
+          { "name": "fract-ol", "lang": "C", "desc": "A 2D fractal renderer built in C using the minilibx graphics library.", "url": "https://github.com/mrmo7ox/fract-ol" },
+          { "name": "push_swap_turk", "lang": "C", "desc": "Highly optimized sorting algorithm using two stacks.", "url": "https://github.com/mrmo7ox/push_swap_turk" },
+          { "name": "printf", "lang": "C", "desc": "My own custom printf function in C built for the 1337 curriculum.", "url": "https://github.com/mrmo7ox/printf" },
+          { "name": "get-next-line", "lang": "C", "desc": "A function that reads and returns a single line from a file descriptor.", "url": "https://github.com/mrmo7ox/get-next-line" },
+          { "name": "libft", "lang": "C", "desc": "A custom C standard library recreation.", "url": "https://github.com/mrmo7ox/libft" }
+        ]
+      },
+      {
+        "category": "Tools & Automation",
+        "items": [
+          { "name": "HR-ai", "lang": "Python/Jupyter", "desc": "AI Hackathon project built for LaStartUp.", "url": "https://github.com/mrmo7ox/HR-ai" },
+          { "name": "gnome-ft_lock", "lang": "JavaScript", "desc": "A custom GNOME Shell extension for system sleep management.", "url": "https://github.com/mrmo7ox/gnome-ft_lock" },
+          { "name": "42-local", "lang": "js/electron", "desc": "Gui app that install, clean and uses 42 api to get profile info", "url": "https://github.com/mrmo7ox/42-local" },
+          { "name": "Mentorplus", "lang": "react/python", "desc": "MentorPlus is a comprehensive full-stack mentoring platform designed to seamlessly connect mentors with students...", "url": "https://github.com/mrmo7ox/Mentorplus" },
+          { "name": "Netflix-clone", "lang": "python/django", "desc": "Netflix-clone is a full-stack clone of netflix using django...", "url": "https://github.com/mrmo7ox/Netflix-clone" },
+          { "name": "mhtravels.ma", "lang": "js/svelte", "desc": "This project is a static website built for @mhtravels, showcasing travel services and information.", "url": "https://github.com/mrmo7ox/mhtravels.ma" }
+        ]
+      }
+    ]
+  },
+  "category": {
+    "HackTheBox": "./assets/htb.jpg",
+    "Pwn.college": "./assets/p.c.png"
+  }
+}

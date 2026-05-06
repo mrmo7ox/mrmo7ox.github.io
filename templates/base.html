@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PAGE_TITLE}} | {{SITE_TITLE}}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="icon" href="./assets/favicon.ico">
+    <style>
+        body { 
+            background-color: #000000; 
+            background-image: radial-gradient(#333 1px, transparent 1px); 
+            background-size: 20px 20px; 
+            color: #e5e5e5; 
+            font-family: monospace; 
+        }
+        .brutal-card { 
+            border: 3px solid #e5e5e5; 
+            transition: all 0.2s ease; 
+        }
+        .brutal-card:hover { 
+            border-color: #ff0000; 
+            box-shadow: 6px 6px 0px #ff0000; 
+            transform: translate(-2px, -2px); 
+        }
+        .crt-overlay {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 4px, 3px 100%;
+            pointer-events: none; z-index: 50;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-6 md:p-12 max-w-5xl mx-auto selection:bg-red-600 selection:text-black">
+    <div class="crt-overlay"></div>
+    
+    <nav class="border-b-4 border-white pb-4 mb-10 flex justify-between uppercase font-bold relative z-10">
+        {{NAV_BAR}}
+    </nav>
+    
+    <main class="relative z-10">
+        {{CONTENT}}
+    </main>
+
+    <footer class="mt-20 pt-8 border-t-4 border-white text-gray-500 text-sm uppercase relative z-10 flex justify-between">
+        <p>{{FOOTER_TEXT}}</p>
+    </footer>
+</body>
+</html>
