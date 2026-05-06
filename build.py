@@ -3,6 +3,7 @@ import markdown
 import glob
 import json
 import re
+import shutil
 
 def load_config(path="site.json"):
     try:
@@ -51,7 +52,6 @@ def process_posts(content_dir, public_dir, templates, category_map, site_info, n
 
         header_part, body_part = raw_text.split("---", 1)
 
-        # Parse Metadata
         meta = {}
         for line in header_part.strip().split("\n"):
             if ":" in line:
@@ -61,14 +61,12 @@ def process_posts(content_dir, public_dir, templates, category_map, site_info, n
         title = meta.get("TITLE", "Untitled Node")
         category = meta.get("CATEGORY", "Uncategorized")
         date = meta.get("DATE", "")
-        image = meta.get("IMAGE", "") # Extract the new image tag
+        image = meta.get("IMAGE", "")
         
         filename = os.path.basename(file_path).replace(".md", ".html")
 
-        # Convert to HTML
         html_content = markdown.markdown(body_part)
 
-        # Inject into template - Adding the featured image to the top of the post if it exists
         page_html = apply_globals(templates["base"], title, site_info, nav_html)
         
         post_header = f"<h1 class='text-4xl md:text-5xl font-bold mb-4 text-white uppercase tracking-tighter'>{title}</h1>"
@@ -80,11 +78,9 @@ def process_posts(content_dir, public_dir, templates, category_map, site_info, n
         post_body = f"{post_header}\n<div class='prose prose-invert prose-red max-w-none'>{html_content}</div>"
         page_html = page_html.replace("{{CONTENT}}", post_body)
 
-        # Write file
         with open(os.path.join(public_dir, filename), "w", encoding="utf-8") as f:
             f.write(page_html)
 
-        # Track category with the new metadata
         if category not in categories_data:
             categories_data[category] = []
         categories_data[category].append({
@@ -259,6 +255,10 @@ def main():
     ASSETS_DIR = os.path.join(PUBLIC_DIR, DIRS.get("assets", "assets"))
 
     init_directories(PUBLIC_DIR, ASSETS_DIR)
+
+    print("[*] Migrating static assets...")
+    if os.path.exists("assets"):
+        shutil.copytree("assets", ASSETS_DIR, dirs_exist_ok=True)
 
     templates = load_templates(TEMPLATE_DIR)
     nav_html = build_nav_bar(config.get("navigation", []))
