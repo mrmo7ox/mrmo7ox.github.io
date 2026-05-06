@@ -30,7 +30,7 @@
       { "event": "NetCom Days 2025", "rank": "CP_Z3R0", "placement": "02", "image": "./assets/netcom.png" }
     ],
     "skills": ["C/C++ Systems Programming", "Reverse Engineering", "Network Protocol Implementation", "Docker Infrastructure", "Ethical Hacking", "Assembly"],
-    "certifications": ["EF SET English Certificate"],
+    "certifications": [""],
     "projects": [
       {
         "category": "Security & Reverse Engineering",
