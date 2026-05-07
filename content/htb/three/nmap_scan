@@ -1,0 +1,17 @@
+# Nmap 7.99 scan initiated Thu May  7 19:07:35 2026 as: /usr/lib/nmap/nmap --min-rate 5000 -T4 -Pn -p 0-9999 -o nmap_scan -v -sC 10.129.141.104
+Nmap scan report for 10.129.141.104
+Host is up (0.052s latency).
+Not shown: 9998 closed tcp ports (reset)
+PORT   STATE SERVICE
+22/tcp open  ssh
+| ssh-hostkey: 
+|   2048 17:8b:d4:25:45:2a:20:b8:79:f8:e2:58:d7:8e:79:f4 (RSA)
+|   256 e6:0f:1a:f6:32:8a:40:ef:2d:a7:3b:22:d1:c7:14:fa (ECDSA)
+|_  256 2d:e1:87:41:75:f3:91:54:41:16:b7:2b:80:c6:8f:05 (ED25519)
+80/tcp open  http
+|_http-title: The Toppers
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+
+Read data files from: /usr/share/nmap
+# Nmap done at Thu May  7 19:07:40 2026 -- 1 IP address (1 host up) scanned in 5.06 seconds

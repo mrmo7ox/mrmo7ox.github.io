@@ -1,0 +1,9 @@
+# Nmap 7.99 scan initiated Thu May  7 15:40:44 2026 as: /usr/lib/nmap/nmap --min-rate 5000 -T4 -Pn -p 0-9999 -o nmap_scan -v 10.129.140.232
+Nmap scan report for 10.129.140.232
+Host is up (0.057s latency).
+Not shown: 9999 closed tcp ports (reset)
+PORT     STATE SERVICE
+3306/tcp open  mysql
+
+Read data files from: /usr/share/nmap
+# Nmap done at Thu May  7 15:40:47 2026 -- 1 IP address (1 host up) scanned in 2.63 seconds

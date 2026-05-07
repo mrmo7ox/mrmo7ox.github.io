@@ -1,0 +1,5 @@
+# Nmap 7.99 scan initiated Thu May  7 16:30:47 2026 as: /usr/lib/nmap/nmap --min-rate 5000 -T4 -Pn -p- -o nmap_scan -v gov-eo.cc
+Failed to resolve "gov-eo.cc".
+Read data files from: /usr/share/nmap
+WARNING: No targets were specified, so 0 hosts scanned.
+# Nmap done at Thu May  7 16:30:47 2026 -- 0 IP addresses (0 hosts up) scanned in 0.69 seconds

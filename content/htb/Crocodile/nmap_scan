@@ -1,0 +1,15 @@
+# Nmap 7.99 scan initiated Thu May  7 18:38:30 2026 as: /usr/lib/nmap/nmap -sV -Pn -p 80 -o nmap_scan -v -sC 10.129.141.51
+Nmap scan report for 10.129.141.51
+Host is up (0.056s latency).
+
+PORT   STATE SERVICE VERSION
+80/tcp open  http    Apache httpd 2.4.41 ((Ubuntu))
+|_http-favicon: Unknown favicon MD5: 1248E68909EAE600881B8DB1AD07F356
+| http-methods: 
+|_  Supported Methods: GET POST OPTIONS HEAD
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+|_http-title: Smash - Bootstrap Business Template
+
+Read data files from: /usr/share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu May  7 18:38:39 2026 -- 1 IP address (1 host up) scanned in 8.58 seconds
