@@ -1,7 +1,7 @@
 TITLE: Redeemer
 CATEGORY: HackTheBox
 DATE: 2026-05-07
-IMAGE: ./assets/Appointment.png
+IMAGE: ./assets/Redeemer.png
 ---
 
 # Start:
