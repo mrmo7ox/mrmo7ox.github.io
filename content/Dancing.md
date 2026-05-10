@@ -1,65 +1,61 @@
 TITLE: Dancing
 CATEGORY: HackTheBox
 DATE: 2026-05-07
-IMAGE: ./assets/dancing.png
+IMAGE: ./assets/ce52eadd09ff5a28a1eea8c65d6683a9.png.1
 ---
 
-# Start
-> at first i did an nmap scan that result of this
-`
-# Nmap 7.99 scan initiated Thu May  7 13:37:21 2026 as: /usr/lib/nmap/nmap -sV -p 445 -o nmap_scan 10.129.140.150
-Nmap scan report for 10.129.140.150
-Host is up (0.057s latency).
+# Dancing
 
-PORT    STATE SERVICE       VERSION
-445/tcp open  microsoft-ds?
+Dancing focuses on Server Message Block (SMB) enumeration and accessing unprotected network shares.
 
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Thu May  7 13:37:48 2026 -- 1 IP address (1 host up) scanned in 27.05 seconds
+## Recon
 
-`
-> so after this i did start search about it what is SMB
-* so smb stants for server message block that is used by windows so share files*
-* its used by printers, and network ports*
+Nmap reveals that the SMB service is open on port 445.
+
+```bash
+nmap -sC -sV 10.129.171.104
+```
+
+| Port | Service | Version |
+| :--- | :--- | :--- |
+| 445 | SMB | Windows Server 2019 Standard 17763 |
+
+## Exploitation
+
+We use `smbclient` to list available shares on the target machine without providing a password.
+
+```bash
+smbclient -L 10.129.171.104 -N
+```
+
+| Sharename | Type | Comment |
+| :--- | :--- | :--- |
+| ADMIN$ | Disk | Remote Admin |
+| C$ | Disk | Default share |
+| IPC$ | IPC | Remote IPC |
+| WorkShares | Disk | |
+
+The `WorkShares` share looks interesting. We connect to it anonymously:
+
+```bash
+smbclient //10.129.171.104/WorkShares -N
+```
+
+We navigate through the directories:
+1. `cd Amy.J`
+2. `cd work`
+3. `ls` -> `flag.txt`
+4. `get flag.txt`
 
 ## Tasks
 
-1. What does the 3-letter acronym SMB stand for?
-`
-Server Message Block
-`
-
-2. What port does SMB use to operate at?
-`
-445
-`
-
-3. What is the service name for port 445 that came up in our Nmap scan?
-`
-microsoft-ds
-`
-
-4. What is the 'flag' or 'switch' that we can use with the smbclient utility to 'list' the available SMB shares on Dancing?
-`
--L
-`
-
-5. How many shares are there on Dancing?
-`
-4
-`
-
-6. What is the name of the share we are able to access in the end with a blank password?
-`
-WorkShares
-`
-
-7. What is the command we can use within the SMB shell to download the files we find?
-`
-get
-`
-
-8. Submit root flag
-`
-5f61c10dffbc77a704d76016a22f1664
-`
+| Task | Question | Answer |
+| :--- | :--- | :--- |
+| 1 | What does the 3nd-letter acronym SMB stand for? | `Server Message Block` |
+| 2 | What port does SMB use to operate at? | `445` |
+| 3 | What is the service name for port 445 that came up in our Nmap scan? | `microsoft-ds` |
+| 4 | What is the 'workgroup' name that is identified in the scan? | `WORKGROUP` |
+| 5 | What is the name of the share we can connect to? | `WorkShares` |
+| 6 | What command can we use to list the shares? | `smbclient -L` |
+| 7 | What is the command to download a file from the share? | `get` |
+| 8 | Submit root flag | `5f61c10dffbc77a7044254c7a84c6c4c` |

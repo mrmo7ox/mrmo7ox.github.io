@@ -8,6 +8,38 @@
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <link rel="icon" href="./assets/favicon.ico">
     <style>
+        .prose pre {
+            background-color: #050505 !important;
+            border: 2px solid #ff0000 !important;
+            border-left: 8px solid #ff0000 !important;
+            color: #00ff00 !important;
+            box-shadow: 4px 4px 0px rgba(255, 0, 0, 0.4) !important;
+            border-radius: 0 !important;
+            padding: 1rem !important;
+            overflow-x: auto;
+            margin-top: 1.5em;
+            margin-bottom: 1.5em;
+        }
+        .prose code {
+            color: #ff3333 !important;
+            background-color: rgba(255, 0, 0, 0.1);
+            padding: 0.2rem 0.4rem;
+            font-family: monospace;
+            font-weight: bold;
+        }
+        .prose pre code {
+            color: inherit !important;
+            background-color: transparent;
+            padding: 0;
+            font-weight: normal;
+        }
+        .prose blockquote {
+            border-left: 4px solid #ff0000;
+            background: #111;
+            padding: 1rem;
+            color: #aaa;
+            font-style: italic;
+        }
         body { 
             background-color: #000000; 
             background-image: radial-gradient(#333 1px, transparent 1px); 

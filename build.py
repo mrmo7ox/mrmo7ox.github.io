@@ -65,7 +65,7 @@ def process_posts(content_dir, public_dir, templates, category_map, site_info, n
         
         filename = os.path.basename(file_path).replace(".md", ".html")
 
-        html_content = markdown.markdown(body_part)
+        html_content = markdown.markdown(body_part, extensions=['fenced_code', 'tables'])
 
         page_html = apply_globals(templates["base"], title, site_info, nav_html)
         

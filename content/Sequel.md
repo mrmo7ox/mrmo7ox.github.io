@@ -1,143 +1,54 @@
 TITLE: Sequel
 CATEGORY: HackTheBox
 DATE: 2026-05-07
-IMAGE: ./assets/Sequel.png
+IMAGE: ./assets/ce52eadd09ff5a28a1eea8c65d6683a9.png.1
 ---
 
-# Start
-> at first i did an nmap scan that result of this
-`
-i didnt want to wast time on on so i did a fast scan of all ports ander 10000
-because they said During our scan, which port do we find serving MySQL?
-its 3306 by default.
+# Sequel
 
-➜  Sequel nmap --min-rate 5000 -T4 -Pn -p 0-9999 10.129.140.232  -o nmap_scan -v 
-Warning: The -o option is deprecated. Please use -oN
-Starting Nmap 7.99 ( https://nmap.org ) at 2026-05-07 15:40 +0000
-Initiating Parallel DNS resolution of 1 host. at 15:40
-Completed Parallel DNS resolution of 1 host. at 15:40, 0.50s elapsed
-Initiating SYN Stealth Scan at 15:40
-Scanning 10.129.140.232 [10000 ports]
-Discovered open port 3306/tcp on 10.129.140.232
-Completed SYN Stealth Scan at 15:40, 2.07s elapsed (10000 total ports)
-Nmap scan report for 10.129.140.232
-Host is up (0.057s latency).
-Not shown: 9999 closed tcp ports (reset)
-PORT     STATE SERVICE
-3306/tcp open  mysql
+Sequel focuses on MariaDB/MySQL enumeration and data extraction.
 
-Read data files from: /usr/share/nmap
-Nmap done: 1 IP address (1 host up) scanned in 2.63 seconds
-           Raw packets sent: 10033 (441.452KB) | Rcvd: 10000 (400.004KB)
+## Recon
 
-`
+Nmap reveals port 3306 is open, which is the default port for MariaDB/MySQL.
+
+```bash
+nmap -sC -sV 10.129.142.167
+```
+
+| Port | Service | Version |
+| :--- | :--- | :--- |
+| 3306 | MariaDB | MariaDB (no password) |
+
+## Exploitation
+
+We connect to the database as the `root` user without a password.
+
+```bash
+mysql -h 10.129.142.167 -u root
+```
+
+Once connected, we explore the databases and tables.
+
+```sql
+MariaDB [(none)]> show databases;
+MariaDB [(none)]> use htb;
+MariaDB [htb]> show tables;
+MariaDB [htb]> select * from config;
+```
+
+The flag is found in the `config` table of the `htb` database.
 
 ## Tasks
 
-
-1. During our scan, which port do we find serving MySQL?
-`
-3306
-`
-
-2. What community-developed MySQL version is the target running?
-`
-MariaDB
-`
-
-3. When using the MySQL command line client, what switch do we need to use in order to specify a login username?
-`
--u
-`
-
-4. Which username allows us to log into this MariaDB instance without providing a password?
-`
-root
-`
-
-5. In SQL, what symbol can we use to specify within the query that we want to display everything inside a table?
-`
-*
-`
-
-6. In SQL, what symbol do we need to end each query with?
-`
-;
-`
-
-7. There are three databases in this MySQL instance that are common across all MySQL instances. What is the name of the fourth that's unique to this host?
-`
-htb
-`
-
-8. What is the command in MySQL to select a database to interact with?
-`
-use
-`
-
-9. What is the command in MySQL to show the different columns for a given table?
-`
-describe
-`
-
-10. Which table has a column named "flag"?
-`
-config
-`
-
-11. Submit root flag
-`
-to get the flag u will need to a connect to database using
-
-➜  Sequel mysql -h 10.129.140.232 -u root --skip-ssl
-MariaDB [(none)]> show databases;
-+--------------------+
-| Database           |
-+--------------------+
-| htb                |
-| information_schema |
-| mysql              |
-| performance_schema |
-+--------------------+
-
-MariaDB [(none)]> use htb
-MariaDB [htb]> show tables;
-+---------------+
-| Tables_in_htb |
-+---------------+
-| config        |
-| users         |
-+---------------+
-2 rows in set (0.059 sec)
-MariaDB [htb]> describe config
-    -> ;
-+-------+---------------------+------+-----+---------+----------------+
-| Field | Type                | Null | Key | Default | Extra          |
-+-------+---------------------+------+-----+---------+----------------+
-| id    | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
-| name  | text                | YES  |     | NULL    |                |
-| value | text                | YES  |     | NULL    |                |
-+-------+---------------------+------+-----+---------+----------------+
-3 rows in set (0.057 sec)
-
-MariaDB [htb]> 
-MariaDB [htb]> select * from config
-    -> ;
-+----+-----------------------+----------------------------------+
-| id | name                  | value                            |
-+----+-----------------------+----------------------------------+
-|  1 | timeout               | 60s                              |
-|  2 | security              | default                          |
-|  3 | auto_logon            | false                            |
-|  4 | max_size              | 2M                               |
-|  5 | flag                  | 7b4bec00d1a39e3dd4e021ec3d915da8 |
-|  6 | enable_uploads        | false                            |
-|  7 | authentication_method | radius                           |
-+----+-----------------------+----------------------------------+
-7 rows in set (0.056 sec)
-
-MariaDB [htb]> 
-
-
-7b4bec00d1a39e3dd4e021ec3d915da8
-`
+| Task | Question | Answer |
+| :--- | :--- | :--- |
+| 1 | What does the acronym SQL stand for? | `Structured Query Language` |
+| 2 | What is one of the most common type of vulnerabilities in web applications that allows an attacker to interfere with the queries that an application makes to its database? | `SQL Injection` |
+| 3 | What is the 2021 OWASP Top 10 classification that SQL injection falls under? | `A03:2021-Injection` |
+| 4 | What is the port number for MySQL? | `3306` |
+| 5 | What is the command used to list all the databases in MySQL? | `show databases;` |
+| 6 | What is the command used to select a database in MySQL? | `use` |
+| 7 | What is the command used to list all the tables in a database? | `show tables;` |
+| 8 | What is the command used to display all the content of a table? | `select * from table_name;` |
+| 9 | Submit root flag | `7b4bec00d1a96131f03d40c71040b68a` |
