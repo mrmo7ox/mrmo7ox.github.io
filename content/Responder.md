@@ -1,6 +1,6 @@
 TITLE: Responder
 CATEGORY: HackTheBox
-DATE: 2026-05-07
+DATE: 2026-05-08
 IMAGE: ./assets/Responder.png
 ---
 
