@@ -1,7 +1,7 @@
 TITLE: Appointment
 CATEGORY: HackTheBox
 DATE: 2026-05-07
-IMAGE: ./assets/ce52eadd09ff5a28a1eea8c65d6683a9.png.1
+IMAGE: ./assets/Appointment.png
 ---
 
 # Appointment
