@@ -17,8 +17,14 @@
     "footer_text": "No System Is Safe. // © 2026 Mohamed Elouardi"
   },
   "navigation": [
-    { "label": "> root_system", "url": "index.html" },
-    { "label": "/whoami", "url": "whoami.html" }
+    {
+      "label": "> root_system",
+      "url": "index.html"
+    },
+    {
+      "label": "/whoami",
+      "url": "whoami.html"
+    }
   ],
   "whoami": {
     "full_bio": "I am a self-taught programmer with practical experience in building web applications and system optimization tools. I focus on low-level security, including Python bytecode analysis and binary reverse engineering.",
@@ -62,7 +68,9 @@
       "Ethical Hacking",
       "Assembly"
     ],
-    "certifications": [""],
+    "certifications": [
+      ""
+    ],
     "projects": [
       {
         "category": "Security & Reverse Engineering",
@@ -101,7 +109,7 @@
             "lang": "C/C++/BASH/...",
             "desc": " my journey through the 1337 (42 Network) curriculum. It tracks my evolution from basic C programming to complex systems architecture, networking, and full-stack development.",
             "url": "https://github.com/mrmo7ox/1337-42"
-          },
+          }
         ]
       },
       {
