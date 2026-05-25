@@ -68,6 +68,12 @@
         "category": "Security & Reverse Engineering",
         "items": [
           {
+            "name": "AssaultCube Linux Cheat (windows + linux)",
+            "lang": "C++",
+            "desc": "experimental, Linux-based cheat developed for the open-source game AssaultCube. aimbot + esp",
+            "url": "https://github.com/mrmo7ox/assault-cube-cheat"
+          },
+          {
             "name": "j1tsur1",
             "lang": "C++",
             "desc": "My first exploit development project.",
@@ -91,95 +97,11 @@
         "category": "1337 (42 Network) Core Curriculum",
         "items": [
           {
-            "name": "ft_irc",
-            "lang": "C++",
-            "desc": "Built a fully functional IRC server in C++98 following strict RFC protocols.",
-            "url": "https://github.com/mrmo7ox/ft_irc"
+            "name": "1337-42",
+            "lang": "C/C++/BASH/...",
+            "desc": " my journey through the 1337 (42 Network) curriculum. It tracks my evolution from basic C programming to complex systems architecture, networking, and full-stack development.",
+            "url": "https://github.com/mrmo7ox/1337-42"
           },
-          {
-            "name": "inception",
-            "lang": "Shell/Docker",
-            "desc": "Deep dive into system administration, deploying a secure multi-container infrastructure.",
-            "url": "https://github.com/mrmo7ox/inception"
-          },
-          {
-            "name": "minishell",
-            "lang": "C",
-            "desc": "Built a custom UNIX shell from scratch handling signals, pipes, and parsing.",
-            "url": "https://github.com/mrmo7ox/minishell"
-          },
-          {
-            "name": "cub3d",
-            "lang": "C",
-            "desc": "Developed a 3D game engine using raycasting math and the minilibx graphics library.",
-            "url": "https://github.com/mrmo7ox/cub3d"
-          },
-          {
-            "name": "born2beroot",
-            "lang": "Shell",
-            "desc": "Set up a secure virtual server from scratch with strict rules and LVM.",
-            "url": "https://github.com/mrmo7ox/born2beroot"
-          },
-          {
-            "name": "minitalk",
-            "lang": "C",
-            "desc": "Client-server communication program utilizing bitwise operations and UNIX signals.",
-            "url": "https://github.com/mrmo7ox/minitalk"
-          },
-          {
-            "name": "cpp-modules",
-            "lang": "C++",
-            "desc": "Advanced object-oriented programming concepts and system design.",
-            "url": "https://github.com/mrmo7ox/cpp-modules"
-          },
-          {
-            "name": "netpractice",
-            "lang": "Networking",
-            "desc": "Deep dive into TCP/IP addressing, subnetting, and routing tables.",
-            "url": "https://github.com/mrmo7ox/netpractice"
-          },
-          {
-            "name": "ft_transcendence",
-            "lang": "Web Stack",
-            "desc": "The final 1337 project: a full-stack real-time quiz games for 42 projects.",
-            "url": "https://github.com/mrmo7ox/ft_transcendence"
-          },
-          {
-            "name": "philosophers-42",
-            "lang": "C",
-            "desc": "Solved the classic dining philosophers problem using threads and mutexes.",
-            "url": "https://github.com/mrmo7ox/philosophers-42"
-          },
-          {
-            "name": "fract-ol",
-            "lang": "C",
-            "desc": "A 2D fractal renderer built in C using the minilibx graphics library.",
-            "url": "https://github.com/mrmo7ox/fract-ol"
-          },
-          {
-            "name": "push_swap_turk",
-            "lang": "C",
-            "desc": "Highly optimized sorting algorithm using two stacks.",
-            "url": "https://github.com/mrmo7ox/push_swap_turk"
-          },
-          {
-            "name": "printf",
-            "lang": "C",
-            "desc": "My own custom printf function in C built for the 1337 curriculum.",
-            "url": "https://github.com/mrmo7ox/printf"
-          },
-          {
-            "name": "get-next-line",
-            "lang": "C",
-            "desc": "A function that reads and returns a single line from a file descriptor.",
-            "url": "https://github.com/mrmo7ox/get-next-line"
-          },
-          {
-            "name": "libft",
-            "lang": "C",
-            "desc": "A custom C standard library recreation.",
-            "url": "https://github.com/mrmo7ox/libft"
-          }
         ]
       },
       {
