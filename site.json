@@ -68,13 +68,17 @@
       "Ethical Hacking",
       "Assembly"
     ],
-    "certifications": [
-      ""
-    ],
+    "certifications": [""],
     "projects": [
       {
         "category": "Security & Reverse Engineering",
         "items": [
+          {
+            "name": "Chess cheat",
+            "lang": "Python/Html/Css/Js",
+            "desc": "this is repo is about a chess cheat just for curiosity only :)",
+            "url": "https://github.com/mrmo7ox/chess-cheat"
+          },
           {
             "name": "AssaultCube Linux Cheat (windows + linux)",
             "lang": "C++",
@@ -88,7 +92,7 @@
             "url": "https://github.com/mrmo7ox/j1tsur1"
           },
           {
-            "name": "dofusmage_cracked",
+            "name": "Dofusmage_cracked",
             "lang": "C++",
             "desc": "Reverse engineered and bypassed authentication for a compiled application.",
             "url": "https://github.com/mrmo7ox/dofusmage_cracked"
