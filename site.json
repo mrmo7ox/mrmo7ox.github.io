@@ -30,6 +30,18 @@
     "full_bio": "I am a self-taught programmer with practical experience in building web applications and system optimization tools. I focus on low-level security, including Python bytecode analysis and binary reverse engineering.",
     "ctf_placements": [
       {
+        "event": "1337 Local CTF",
+        "rank": "we just testin the water man",
+        "placement": "19",
+        "image": "https://images-ext-1.discordapp.net/external/yHAXytGBlUjy8s3ZhuvdPWTqmoBQjgXl2nKM9w5NjvU/https/s3.eu-central-1.amazonaws.com/htb-ctf-prod-public-storage/ctf/banners/ot3RZZY0wyliWehMnZDFyIvX8HnzWSZyFppDNXEW.jpg?format=webp"
+      },
+      {
+        "event": "1337 Local CTF",
+        "rank": "Anarchist",
+        "placement": "01",
+        "image": "https://media.discordapp.net/attachments/1305917851412205659/1552671632726691980/ctflgo.webp?ex=6ab675a4&is=6ab52424&hm=ae0e16ae341cf6e5c5c2983bb791ee6b681b2af92c73379ee029cb5e5ae8f8c9&=&format=webp"
+      },
+      {
         "event": "CTF MUNIDAPOLIS 2026",
         "rank": "Brave Warriors",
         "placement": "04",
